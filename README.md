@@ -1,73 +1,103 @@
-# React + TypeScript + Vite
+# 个人网站项目
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个现代化的个人作品集网站，使用React、TypeScript和Tailwind CSS构建。
 
-Currently, two official plugins are available:
+## 🚀 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **响应式设计**：适配手机、平板、桌面
+- **深色模式**：支持系统偏好和手动切换
+- **作品集展示**：项目卡片，包含技术栈标签
+- **博客系统**：Markdown文章，支持Frontmatter
+- **关于我**：个人介绍、技能展示、经历时间线
+- **联系方式**：联系表单和社交媒体链接
+- **现代化技术栈**：React 18、TypeScript、Tailwind CSS、Vite
 
-## React Compiler
+## 📁 项目结构
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/     # 可复用组件（布局、UI、共享）
+├── pages/         # 页面组件（首页、关于、作品集、博客、联系）
+├── data/          # 静态数据和博客内容
+├── types/         # TypeScript类型定义
+├── routes.tsx     # 路由配置
+└── App.tsx        # 主应用组件
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ 开发命令
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# 安装依赖
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+
+# 预览生产构建
+npm run preview
 ```
+
+## 🚀 部署到GitHub Pages
+
+### 步骤1：创建GitHub仓库
+1. 访问 [github.com](https://github.com)
+2. 点击右上角 "+" → "New repository"
+3. 输入仓库名称：`personal-site`
+4. 选择公开（Public）仓库
+5. 不要初始化README、.gitignore等（代码已存在）
+6. 点击 "Create repository"
+
+### 步骤2：关联远程仓库并推送
+```bash
+# 关联远程仓库（替换your-username为你的GitHub用户名）
+git remote add origin https://github.com/jicongri/personal-site.git
+
+# 推送代码到GitHub
+git branch -M main
+git push -u origin main
+```
+
+### 步骤3：配置GitHub Pages
+1. 在GitHub仓库页面，点击 "Settings" → "Pages"
+2. 在 "Source" 部分，选择 "Deploy from a branch"
+3. 分支选择 "main"，文件夹选择 "/ (root)"
+4. 点击 "Save"
+5. 等待几分钟，访问 `https://jicongri.github.io/personal-site/`
+
+## 🎨 自定义内容
+
+### 更新个人信息
+- `src/data/portfolio.ts` - 替换为你的真实项目
+- `src/data/skills.ts` - 更新技能列表
+- `src/pages/About.tsx` - 修改个人介绍和经历
+- `src/data/blog/index.ts` - 添加更多博客文章
+
+### 添加图片资源
+在 `public/images/` 目录添加：
+- 个人头像
+- 项目截图
+- 网站图标
+
+## 📱 技术栈
+
+- **React 18** - 前端框架
+- **TypeScript** - 类型安全
+- **Tailwind CSS** - 样式框架
+- **Vite** - 构建工具
+- **React Router v6** - 客户端路由
+- **React Markdown** - Markdown渲染
+- **React Icons** - 图标库
+
+## 🔗 部署到Vercel（推荐）
+
+1. 将代码推送到GitHub
+2. 访问 [vercel.com](https://vercel.com)
+3. 导入GitHub仓库
+4. 自动部署，免费HTTPS和CDN
+
+## 📄 许可证
+
+MIT
