@@ -38,6 +38,8 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: import.meta.env.PROD ? '/personal-site' : '/',
+});
 
 export default router;
